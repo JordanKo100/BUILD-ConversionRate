@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exchange list</title>
+</head>
+<body>
+    <div class = 'Container'> 
+        <form action = '/' method = "POST">
+            <div class = "amount">
+                <input type="number" name = 'amount' value='0'>
+            </div>
+            <div class = 'drop-list'>
+                <div class = 'from'>From
+                    <select  name = 'from'>
+                        {% for i in countries %}
+                        <option value = {{i}}>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div type = 'to'>To
+                    <select name = 'to'>
+                        {% for i in countries %}
+                        <option value = {{i}}>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            {{FROMcurrency}} to {{TOcurrency}}:<p>{{convertedPrice}}</p>
+            <input type='submit' value = 'Submit'>
+        </form> 
+    </div>
+</body>
+</html>
